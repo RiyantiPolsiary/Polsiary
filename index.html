@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Diri - Indi Riyanti Polsiary</title>
+
+    <!-- BOOTSTRAP 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FONT AWESOME ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* BACKGROUND WARNA LILAC */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f0fa;
+            color: #333;
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(150, 130, 180, 0.1);
+            padding: 40px;
+        }
+
+        /* FOTO & NAMA */
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 5px solid #e1d5f0;
+        }
+        .name-text {
+            font-size: 1.8rem;
+            color: #2d2340;
+        }
+        .location-text {
+            color: #8a7baf;
+        }
+
+        /* STYLE MENU YANG BISA DIKLIK */
+        .menu-icons {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            padding: 15px 0;
+            border-top: 1px solid #e9e3f3;
+            border-bottom: 1px solid #e9e3f3;
+        }
+        .menu-item {
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            color: #b8a2d9;
+        }
+        .menu-item i {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        .menu-item span {
+            font-size: 0.9rem;
+            color: #6c5b7b;
+        }
+        /* STYLE KETIKA MENU DIKLIK / AKTIF */
+        .menu-item.active {
+            background: linear-gradient(135deg, #e1d5f0, #d1c4e9);
+            color: #6a4c93 !important;
+            font-weight: bold;
+        }
+        .menu-item:hover {
+            background: #f0ebf8;
+        }
+
+        /* BAGIAN KONTEN YANG MUNCUL */
+        .content-box {
+            display: none; /* Awalnya disembunyikan */
+            animation: fadeIn 0.5s;
+        }
+        .content-box.active {
+            display: block; /* Muncul kalau aktif */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .welcome-text {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #b8a2d9;
+        }
+
+        h2 {
+            color: #9575cd;
+            border-bottom: 2px solid #e1d5f0;
+            padding-bottom: 8px;
+        }
+
+        .info-card {
+            background: #f9f7fd;
+            border-left: 5px solid #b8a2d9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .skill-badge {
+            font-size: 1rem;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 25px;
+            background-color: #e1d5f0;
+            color: #6c5b7b;
+            display: inline-block;
+        }
+
+        .back-btn {
+            text-align: center;
+            margin-top: 30px;
+            color: #9575cd;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="main-container">
+        
+        <!-- BAGIAN ATAS -->
+        <div class="text-center">
+            <img src="./foto.jpg.jpeg" alt="Foto Indi" class="rounded-circle profile-img">
+            <h1 class="name-text mt-3">Indi Riyanti Polsiary</h1>
+            <p class="location-text"><i class="fas fa-map-marker-alt"></i> Ambon, Indonesia</p>
+        </div>
+
+        <!-- MENU YANG BISA DIKLIK -->
+        <div class="menu-icons">
+            <div class="menu-item active" onclick="showContent('status')">
+                <i class="fas fa-user-check"></i>
+                <span>Status</span>
+            </div>
+            <div class="menu-item" onclick="showContent('pengalaman')">
+                <i class="fas fa-briefcase"></i>
+                <span>Pengalaman</span>
+            </div>
+            <div class="menu-item" onclick="showContent('pendidikan')">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Pendidikan</span>
+            </div>
+            <div class="menu-item" onclick="showContent('alamat')">
+                <i class="fas fa-home"></i>
+                <span>Alamat</span>
+            </div>
+            <div class="menu-item" onclick="showContent('skill')">
+                <i class="fas fa-code"></i>
+                <span>Skill</span>
+            </div>
+        </div>
+
+        <!-- TEKS SELAMAT DATANG -->
+        <div id="welcome-text" class="welcome-text">
+            <i class="fas fa-hand-pointer"></i> ✨ Silakan Klik Menu di Atas ✨
+            <br><small>Portfolio Interaktif</small>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- BAGIAN ISI KONTEN (MUNCUL KALAU DIKLIK) -->
+        <!-- ============================================== -->
+
+        <!-- 1. KONTEN STATUS -->
+        <div id="status" class="content-box active">
+            <h2><i class="fas fa-user-check"></i> Status Saat Ini</h2>
+            <div class="info-card">
+                <p class="fs-5"><i class="fas fa-check-circle text-primary"></i> <strong>Status:</strong> Mahasiswa Aktif Semester 4</p>
+                <p class="fs-5"><i class="fas fa-university text-primary"></i> <strong>Universitas:</strong> Universitas Pattimura - Ilmu Komputer</p>
+                <p class="fs-5"><i class="fas fa-chart-line text-primary"></i> <strong>IPK Sementara:</strong> 3.30 (skala 4.00)</p>
+                <p class="fs-5"><i class="fas fa-trophy text-warning"></i> <strong>Prestasi:</strong>Peraih 1 Medali Perak & Perunggu Dalam Ajang Olimpiade Sains (Biologi, Kimia) Sebagai Peserta Tahun 2023 Secara Online</p>
+                <hr>
+                <p class="fst-italic bg-light p-2 rounded">"Aktif mengikuti kegiatan riset dan pengembangan diri."</p>
+            </div>
+            <div class="back-btn" onclick="backToMenu()">
+                <i class="fas fa-arrow-left"></i> Kembali ke Menu Utama
+            </div>
+        </div>
+
+        <!-- 2. KONTEN PENGALAMAN -->
+        <div id="pengalaman" class="content-box">
+            <h2><i class="fas fa-briefcase"></i> Pengalaman</h2>
+            <div class="info-card">
+                <ul class="list-unstyled fs-5">
+                    <li class="mb-3"><i class="fas fa-star text-warning"></i> <strong>Peraih Medali Perak dan Perunggu Pada Olimpiade Sains Tingkat SMA Tahun 2023</strong> - Sekolah Menengah Atas</li>
+                    <li class="mb-3"><i class="fas fa-star text-warning"></i> <strong>Pengurus PMK Universitass Patimura Periode 2026-2027</strong> - Kegiatan Kerohanian</li>
+                    <li class="mb-3"><i class="fas fa-star text-warning"></i> <strong>Panitia Pemilihan BEM FST UNPATTI 2026</strong> - Mahasiswa FST UNPATTI</li>
+                    <li class="mb-3"><i class="fas fa-star text-warning"></i> <strong>Penelitian Tentang Pembuatan Minyak Nilam</strong> - Tim SMTK TNS 2023</li>
+                </ul>
+            </div>
+            <div class="back-btn" onclick="backToMenu()">
+                <i class="fas fa-arrow-left"></i> Kembali ke Menu Utama
+            </div>
+        </div>
+
+        <!-- 3. KONTEN PENDIDIKAN -->
+        <div id="pendidikan" class="content-box">
+            <h2><i class="fas fa-graduation-cap"></i> Riwayat Pendidikan</h2>
+            <div class="info-card">
+                <ul class="list-unstyled fs-5">
+                    <li class="mb-2"><i class="fas fa-school text-primary"></i> PAUD KASIH YAFILA</li>
+                    <li class="mb-2"><i class="fas fa-school text-primary"></i> SD INPRES YAFILA</li>
+                    <li class="mb-2"><i class="fas fa-school text-primary"></i> SMP NEGERI 1 TNS</li>
+                    <li class="mb-2"><i class="fas fa-school text-primary"></i> STMTK TNS</li>
+                    <li class="mb-2"><i class="fas fa-university text-primary"></i> <strong>Universitas Pattimura</strong> (Saat Ini)</li>
+                </ul>
+            </div>
+            <div class="back-btn" onclick="backToMenu()">
+                <i class="fas fa-arrow-left"></i> Kembali ke Menu Utama
+            </div>
+        </div>
+
+        <!-- 4. KONTEN ALAMAT -->
+        <div id="alamat" class="content-box">
+            <h2><i class="fas fa-home"></i> Alamat Lengkap</h2>
+            <div class="info-card text-center fs-5">
+                <i class="fas fa-map-marked-alt fa-3x text-primary mb-3"></i>
+                <p><strong>Desa Yafila,</strong></p>
+                <p>Kecamatan Amahai,</p>
+                <p>Kabupaten Maluku Tengah,</p>
+                <p>Provinsi Maluku, Indonesia.</p>
+            </div>
+            <div class="back-btn" onclick="backToMenu()">
+                <i class="fas fa-arrow-left"></i> Kembali ke Menu Utama
+            </div>
+        </div>
+
+        <!-- 5. KONTEN SKILL -->
+        <div id="skill" class="content-box">
+            <h2><i class="fas fa-code"></i> Keahlian & Skill</h2>
+            <div class="text-center mt-4">
+                <span class="skill-badge"><i class="fab fa-html5"></i> HTML & CSS</span>
+                <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
+                <span class="skill-badge"><i class="fas fa-file-excel"></i> Microsoft Office</span>
+            </div>
+            <div class="back-btn" onclick="backToMenu()">
+                <i class="fas fa-arrow-left"></i> Kembali ke Menu Utama
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- SCRIPT UNTUK FUNGSI KLIK -->
+<script>
+    function showContent(id) {
+        // Sembunyikan semua konten
+        document.querySelectorAll('.content-box').forEach(box => {
+            box.classList.remove('active');
+        });
+
+        // Hapus class aktif dari semua menu
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        // Tampilkan konten yang dipilih
+        document.getElementById(id).classList.add('active');
+
+        // Beri warna aktif pada menu yang diklik
+        event.currentTarget.classList.add('active');
+
+        // Sembunyikan tulisan selamat datang
+        document.getElementById('welcome-text').style.display = 'none';
+    }
+
+    function backToMenu() {
+        // Sembunyikan semua konten
+        document.querySelectorAll('.content-box').forEach(box => {
+            box.classList.remove('active');
+        });
+
+        // Hapus semua warna aktif
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        // Tampilkan tulisan selamat datang lagi
+        document.getElementById('welcome-text').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
